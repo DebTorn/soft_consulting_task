@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persons>
+    <person>
+        <ADOAZONOSITOJEL>778899112</ADOAZONOSITOJEL>
+        <TELJESNEV>Ügyvezető Mihály</TELJESNEV>
+        <AZONOSITO>1</AZONOSITO>
+        <EGYEBID>1</EGYEBID>
+        <BELEPES>2015.09.08</BELEPES>
+        <KILEPES>2021.09.08</KILEPES>
+        <EMAILCIM>ugyvezeto.mihaly@gmail.com</EMAILCIM>
+    </person>
+    <person>
+        <ADOAZONOSITOJEL>667788223</ADOAZONOSITOJEL>
+        <TELJESNEV>Ügyvezető-helyettes Lajos</TELJESNEV>
+        <AZONOSITO>2</AZONOSITO>
+        <EGYEBID>2</EGYEBID>
+        <BELEPES>2016.10.09</BELEPES>
+        <KILEPES>2022.10.13</KILEPES>
+        <EMAILCIM>ugyvezetohelyettes.lajos@gmail.com</EMAILCIM>
+    </person>
+    <person>
+        <ADOAZONOSITOJEL>556677333</ADOAZONOSITOJEL>
+        <TELJESNEV>Portás Erzsébet</TELJESNEV>
+        <AZONOSITO>3</AZONOSITO>
+        <EGYEBID>3</EGYEBID>
+        <BELEPES>2016.11.10</BELEPES>
+        <KILEPES>2023.05.04</KILEPES>
+        <EMAILCIM>portas@gmail.com</EMAILCIM>
+    </person>
+    <person>
+        <ADOAZONOSITOJEL>445566444</ADOAZONOSITOJEL>
+        <TELJESNEV>Teszt Elek</TELJESNEV>
+        <AZONOSITO>4</AZONOSITO>
+        <EGYEBID>4</EGYEBID>
+        <BELEPES>2021.03.18</BELEPES>
+        <KILEPES>2024.01.29</KILEPES>
+        <EMAILCIM>teszt.elek@gmail.com</EMAILCIM>
+    </person>
+    <person>
+        <ADOAZONOSITOJEL>334455555</ADOAZONOSITOJEL>
+        <TELJESNEV>Kiss Imre</TELJESNEV>
+        <AZONOSITO>5</AZONOSITO>
+        <EGYEBID>5</EGYEBID>
+        <BELEPES>2022.10.10</BELEPES>
+        <KILEPES>2023.12.20</KILEPES>
+        <EMAILCIM>kiss.imre@teszt.com</EMAILCIM>
+    </person>
+</persons>
