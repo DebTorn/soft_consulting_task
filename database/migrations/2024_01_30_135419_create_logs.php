@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("person_id");
+            $table->enum('type', ['save', 'update', 'delete']);
             $table->timestamps();
 
             $table->foreign('person_id')->references('id')->on('persons');
