@@ -10,6 +10,13 @@ class Log extends Model
 
     protected $table = 'logs';
 
+    protected $fillable = [
+        'type',
+        'datas',
+        'reason',
+        'person_id'
+    ];
+
     public function person(){
         return $this->belongsTo(Person::class, 'person_id');
     }

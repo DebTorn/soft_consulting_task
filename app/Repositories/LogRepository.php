@@ -13,10 +13,6 @@ class LogRepository implements LogRepositoryInt{
     }
 
     public function getById($id, $with = []){
-        if(empty($id)){
-            throw new Exception('A bemeneti adatok nem megfelelőek');
-        }
-
         $log = null;
 
         if(is_array($with) && count($with) > 0){
@@ -29,10 +25,6 @@ class LogRepository implements LogRepositoryInt{
     }
 
     public function save(array $datas){
-        if(empty($datas)){
-            throw new Exception('A bemeneti adatok nem megfelelőek');
-        }
-
         return Log::create($datas);
     }
 

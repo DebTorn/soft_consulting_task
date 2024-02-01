@@ -34,6 +34,11 @@ class LogService implements LogServiceInt{
     }
 
     public function insert($data){
+
+        if(empty($data)){
+            throw new HttpException(404, 'A bemeneti adatok nem megfelelőek');
+        }
+
         if(!$this->logRepository->save($data)){
             throw new HttpException(400, 'A log bejegyzés mentése sikertelen');
         }

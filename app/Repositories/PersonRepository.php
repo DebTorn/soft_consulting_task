@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Exceptions\PersonException;
 use App\Models\Person;
 use App\Repositories\Interfaces\PersonRepositoryInt;
 use Exception;
@@ -14,7 +15,7 @@ class PersonRepository implements PersonRepositoryInt{
 
     public function getById($id){
         if(empty($id)){
-            throw new Exception('A bemeneti adatok nem megfelelőek');
+            throw new PersonException('A bemeneti adatok nem megfelelőek', 1);
         }
 
         $person = Person::find($id);
@@ -23,27 +24,16 @@ class PersonRepository implements PersonRepositoryInt{
     }
 
     public function save(array $datas){
-        if(empty($datas)){
-            throw new Exception('A bemeneti adatok nem megfelelőek');
+        if($this->exist($datas)){
+            return null;
         }
 
         return Person::create($datas);
     }
 
-    public function update(Person $person, array $datas){
-        if(empty($person) || empty($datas)){
-            throw new Exception('A bemeneti adatok nem megfelelőek');
-        }
-
-        return $person->update($datas);
-    }
-
-    public function delete(Person $person){
-        if(empty($person)){
-            throw new Exception('A bemeneti adatok nem megfelelőek');
-        }
-
-        return $person->delete();
+    public function exist(array $datas)
+    {
+        return Person::where('adoazonositojel', $datas['adoazonositojel'])->orWhere('id', $datas['id'])->orWhere('email', $datas['email'])->exists();
     }
 
 }

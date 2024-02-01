@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("person_id");
-            $table->enum('type', ['save', 'update', 'delete']);
+            $table->integer('type');
+            $table->json('datas')->nullable();
+            $table->string('reason');
+            $table->unsignedBigInteger('person_id')->nullable();
             $table->timestamps();
 
             $table->foreign('person_id')->references('id')->on('persons');

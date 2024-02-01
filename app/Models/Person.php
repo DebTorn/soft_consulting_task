@@ -11,10 +11,22 @@ class Person extends Model
 
     protected $table = "persons";
 
+    protected $fillable = [
+        'id',
+        'azonosito',
+        'adoazonositojel',
+        'teljesnev',
+        'egyebid',
+        'belepes',
+        'kilepes',
+        'email'
+    ];
+
+    protected $dates = ['created_at', 'updated_at'];
+
     public function logs(){
         return $this->hasMany(Log::class);
     }
 
-    use SoftDeletes;
     use HasFactory;
 }
