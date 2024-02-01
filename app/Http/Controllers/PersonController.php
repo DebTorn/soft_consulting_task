@@ -77,7 +77,7 @@ class PersonController extends Controller
 
                                         $log = ['type' => 1, 'person_id' => $person->id, 'person' => $person, 'reason' => 'Sikeres importálás'];
                                     }catch(PersonException $e){
-                                        $log = ['type' => 0, 'datas' => json_encode($personData), 'reason' => $e->getMessage()];
+                                        $log = ['type' => 0, 'datas' => json_encode($personData, JSON_UNESCAPED_UNICODE), 'reason' => $e->getMessage()];
                                     }
 
                                     $logs[] = $log;
