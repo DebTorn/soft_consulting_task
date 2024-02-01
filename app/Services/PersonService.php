@@ -40,8 +40,19 @@ class PersonService implements PersonServiceInt{
             throw new PersonException('Nem adott át adatokat');
         }
 
-        if($this->personRepository->exist($data)){
-            throw new PersonException('A személy már importálva lett');
+        switch($this->personRepository->exist($data)){
+            case 1:
+                throw new PersonException('Ez a személy már importálva lett');
+                break;
+            case 2:
+                throw new PersonException('Ilyen azonosítóval már létre lett hozva személy');
+                break;
+            case 3:
+                throw new PersonException('Ilyen e-mail címmel már létre lett hozva személy');
+                break;    
+            case 3:
+                throw new PersonException('Ilyen adóazonosítóval már létre lett hozva személy');
+                break;    
         }
 
         $person = $this->personRepository->save($data);

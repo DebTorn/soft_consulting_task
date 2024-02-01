@@ -33,7 +33,27 @@ class PersonRepository implements PersonRepositoryInt{
 
     public function exist(array $datas)
     {
-        return Person::where('adoazonositojel', $datas['adoazonositojel'])->orWhere('id', $datas['id'])->orWhere('email', $datas['email'])->exists();
+        $person = Person::where('id', $datas['id'])->exists();
+
+        if($person){
+            return 2;
+        }else{
+            $person = Person::where('email', $datas['email'])->exists();
+
+            if($person){
+                return 3;
+            }else{
+
+                $person = Person::where('adoazonositojel', $datas['adoazonositojel'])->exists();
+
+                if($person){
+                    return 4;
+                }
+
+            }
+        }
+
+        return false;
     }
 
 }
